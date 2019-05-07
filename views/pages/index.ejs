@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-time Online code editor</title>
+    <style>
+    </style>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="code-editor">
+    <div class="border" id="output">
+        <iframe src="html/iframe.html"></iframe>
+    </div>
+
+    <div class="border" id="edit-html">
+        <label for="html-input">Type HTML here:</label>
+        <textarea id="html-input">
+
+        </textarea>
+    </div>
+
+    <div class="border" id="edit-css">
+        <label for="html-input">Type CSS here:</label>
+        <textarea id="css-input"></textarea>
+    </div>
+
+    <div class="border" id="edit-js"></div>
+</div>
+
+<div class="chat">
+    <ul id="messages"></ul>
+    <div class="log-wrapper">
+        <h3>Current users in the session</h3>
+        <ul class="log">
+
+        </ul>
+    </div>
+
+    <form action="">
+        <input id="m" autocomplete="off" placeholder="Type here..."/><button>Send</button>
+    </form>
+
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
