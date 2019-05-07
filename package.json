@@ -1,0 +1,25 @@
+{
+  "name": "project-3-1819",
+  "version": "1.0.0",
+  "description": "## Onderzoek ### GraphQL Wat gebeurt er zodra een intermediair inlogt?  De volgende GraphQL POST requests worden gedaan:  * meData Output Voorbeeld: ```javascript {   \"data\": {     \"me\": {       \"id\": 8,       \"firstName\": \"Lacey\",       \"email\": \"9@moderator.lifely.nl\",       \"moderator\": {         \"id\": 10,         \"agency\": {           \"id\": 2,           \"name\": \"Teqoia\",           \"privacyUrl\": null,           \"__typename\": \"AgencyType\"         },         \"__typename\": \"ModeratorType\"       },       \"picture\": null,       \"__typename\": \"PersonType\"     }   } } ``` * getChats  * getCurrentChat * getMessages * getJobs * getCompanies",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jesperingels/project-3-1819.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jesperingels/project-3-1819/issues"
+  },
+  "homepage": "https://github.com/jesperingels/project-3-1819#readme",
+  "dependencies": {
+    "compression": "^1.7.4",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "nodemon": "^1.19.0"
+  }
+}

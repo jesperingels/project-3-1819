@@ -36,11 +36,11 @@ Output Voorbeeld:
 * getCompanies
 
 ### Interaction diagram 
-![interaction diagram](img/interaction_diagram.png)
+![interaction diagram](public/img/interaction_diagram.png)
 (credits: Lifely)
 
 ### sequence diagram
-![sequence diagram](img/sequence_diagram.png)
+![sequence diagram](public/img/sequence_diagram.png)
 
 
 
