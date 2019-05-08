@@ -102,6 +102,7 @@
 // Code editor section
     const htmlInput = document.getElementById('html-input');
     const cssInput = document.getElementById('css-input');
+    const jsInput = document.getElementById('js-input');
 
     socket.on('AllHtml', (html) => {
         console.log(html);
@@ -116,6 +117,17 @@
         document.querySelector('iframe').contentWindow.document.querySelector("style").innerText = cssInput.value;
     });
 
+    socket.on('AllJs', (js) => {
+        console.log(js);
+        jsInput.value = js;
+
+        try {
+            document.querySelector('iframe').contentWindow.document.querySelector("script").innerHTML = eval(jsInput.value);
+        } catch(err){console.log("you fucked up")} // Maikel was here...
+    });
+
+
+
 
 
 
@@ -124,6 +136,7 @@
     //
     //
     // });
+
 
     htmlInput.addEventListener('input', () => {
         const html = htmlInput.value;
@@ -135,6 +148,12 @@
         const css = cssInput.value;
         socket.emit('ClCss', css);
         console.log('css sent!');
+    });
+
+    jsInput.addEventListener('input', () => {
+        const js = jsInput.value;
+        socket.emit('ClJs', js);
+        console.log('javascript sent!');
     })
 
 

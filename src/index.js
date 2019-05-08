@@ -83,6 +83,10 @@ io.on('connection', socket => {
         console.log(css);
         io.emit('AllCss', css)
     });
+    socket.on('ClJs', (css) => {
+        console.log(css);
+        io.emit('AllJs', css)
+    });
 });
 
 http.listen(port, () => console.log('App listening on port: ' + port ));
