@@ -105,16 +105,27 @@
 
     socket.on('AllHtml', (html) => {
         console.log(html);
-        document.querySelector('iframe').contentWindow.document.body.innerHTML = html;
+        htmlInput.value = html;
+        document.querySelector('iframe').contentWindow.document.body.innerHTML = htmlInput.value;
+
     });
 
     socket.on('AllCss', (css) => {
         console.log(css);
-        document.querySelector('iframe').contentWindow.document.querySelector("style").innerText = css;
+        cssInput.value = css;
+        document.querySelector('iframe').contentWindow.document.querySelector("style").innerText = cssInput.value;
     });
 
 
-    htmlInput.addEventListener('input', function() {
+
+
+    // document.addEventListener('keypress', function () {
+    //
+    //
+    //
+    // });
+
+    htmlInput.addEventListener('input', () => {
         const html = htmlInput.value;
         socket.emit('ClHtml', html);
         console.log('html sent!');
@@ -124,7 +135,9 @@
         const css = cssInput.value;
         socket.emit('ClCss', css);
         console.log('css sent!');
-    });
+    })
+
+
 
 
 })();

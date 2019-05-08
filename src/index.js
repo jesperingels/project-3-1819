@@ -1,10 +1,15 @@
 const express = require('express');
-require('ejs');
 const app = express();
+var http = require('http').Server(app);
+var io = require('socket.io')(http, {
+    'pingInterval': 500,
+    'pingTimeout': 1000
+});
 const rp = require('request-promise');
-const http = require('http').Server(app);
+require('ejs');
+// const http = require('http').Server(app);
 const request = require('request');
-const io = require('socket.io')(http);
+// const io = require('socket.io')(http);
 const randomInt = require('random-int');
 const port = process.env.PORT || 3020;
 const bodyParser = require('body-parser');
@@ -40,8 +45,9 @@ app.post('/', function(req, res) {
         io.emit("user connect", onlineUsers);
 
 
-        socket.on("disconnect",() => {
-            console.log(thisUser + " disconnected");
+        socket.on("disconnect",(reason) => {
+
+            console.log(thisUser + " disconnected " + 'because ' + reason);
 
             for( let i = 0; i < onlineUsers.length; i++){
                 if ( onlineUsers[i] === thisUser) {
@@ -61,13 +67,6 @@ io.on('connection', socket => {
     socket.on('query', (msg) => {
         const chatMsg = msg[0];
         const username = msg[1];
-
-        // API call with headers
-        // rp(options(chatMsg))
-        //     .then(res => callback(res))
-        //     .catch(function (err) {
-        //         console.log(err);
-        //     });
 
         const data = [chatMsg, username];
 
