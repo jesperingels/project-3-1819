@@ -71,9 +71,18 @@ io.on('connection', socket => {
 
         const data = [chatMsg, username];
 
-        io.emit("giphy init", data)
+        io.emit('giphy init', data)
 
 
+    });
+
+    socket.on('ClHtml', (html) => {
+        console.log(html);
+        io.emit('AllHtml', html);
+    });
+    socket.on('ClCss', (css) => {
+        console.log(css);
+        io.emit('AllCss', css)
     });
 });
 
