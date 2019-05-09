@@ -121,9 +121,9 @@
         console.log(js);
         jsInput.value = js;
 
-        try {
+        // try {
             document.querySelector('iframe').contentWindow.document.querySelector("script").innerHTML = eval(jsInput.value);
-        } catch(err){console.log("you fucked up")} // Maikel was here...
+        // } catch(err){console.log("you fucked up")} // Maikel was here...
     });
 
 
@@ -155,8 +155,6 @@
         socket.emit('ClJs', js);
         console.log('javascript sent!');
     })
-
-
 
 
 })();
