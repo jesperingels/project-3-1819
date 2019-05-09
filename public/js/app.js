@@ -48,12 +48,6 @@
 
         console.log('online users ' + onlineUsers);
 
-        // for( let i = 0; i < onlineUsers.length; i++){
-        //     if ( onlineUsers[i] === user) {
-        //         onlineUsers.splice(i, 1);
-        //     }
-        // }
-
         console.log('online users2 ' + onlineUsers);
 
 
@@ -126,18 +120,6 @@
         // } catch(err){console.log("you fucked up")} // Maikel was here...
     });
 
-
-
-
-
-
-    // document.addEventListener('keypress', function () {
-    //
-    //
-    //
-    // });
-
-
     htmlInput.addEventListener('input', () => {
         const html = htmlInput.value;
         socket.emit('ClHtml', html);
@@ -154,7 +136,7 @@
         const js = jsInput.value;
         socket.emit('ClJs', js);
         console.log('javascript sent!');
-    })
+    });
 
 
 })();

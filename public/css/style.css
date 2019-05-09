@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Inconsolata');
+
 * {
     margin: 0;
     padding: 0;
@@ -9,12 +11,15 @@ html, body {
     min-height: 100%;
     height: 100%;
     overflow: auto;
-    font: 13px Helvetica, Arial;
+    font: 14px Helvetica, Arial;
+
 }
 
 body {
     display: grid;
     grid-template-columns: 75% 25%;
+    background-color: #3c3f41;
+    color: #eeeeee;
 }
 
 ul li, ul {
@@ -47,7 +52,7 @@ form button {
     width: 9%;
     background: rgb(130, 224, 255);
     border: none;
-    padding: 10px;
+    padding: 18px 0;
 }
 
 h3 {
@@ -69,9 +74,9 @@ h3 {
     padding-bottom: 50px;
 }
 
-#messages li:nth-child(odd) {
-    background: #eee;
-}
+/*#messages li:nth-child(odd) {*/
+/*    background: #eee;*/
+/*}*/
 
 img {
     float: left;
@@ -98,16 +103,36 @@ img {
 
 #output {
     grid-column: 1 / span 3;
+    background: white;
+    color: black;
 }
 
 textarea {
     width: 100%;
     height: 100%;
+    font-family: 'Inconsolata', monospace;
+    background-color: #2b2b2b;
+    color: #eee;
 }
 
 iframe {
     width: 100%;
     height: 100%;
+    font-family: 'Inconsolata', monospace;
 }
+
+.editor {
+    background-color: #3c3f41;
+}
+
+
+
+
+
+
+
+
+
+
 
 
