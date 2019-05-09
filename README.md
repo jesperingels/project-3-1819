@@ -1,5 +1,9 @@
 # Project 3 @cmda-minor-web · 2018-2019
 
+## Concept
+Voor de site van [freshheroes](https://freshheroes.com/), heb ik een toepassing bedacht waarbij een bedrijf een real-time coding 
+challenge met de potentiele stagiair kan doen.
+
 ## Onderzoek
 ### GraphQL
 Wat gebeurt er zodra een intermediair inlogt? 
@@ -41,6 +45,8 @@ Output Voorbeeld:
 
 ### sequence diagram
 ![sequence diagram](public/img/sequence_diagram.png)
+
+
 
 
 

@@ -97,11 +97,13 @@
     const htmlInput = document.getElementById('html-input');
     const cssInput = document.getElementById('css-input');
     const jsInput = document.getElementById('js-input');
+    let javascript='';
+
 
     socket.on('AllHtml', (html) => {
         console.log(html);
         htmlInput.value = html;
-        document.querySelector('iframe').contentWindow.document.body.innerHTML = htmlInput.value;
+        document.querySelector('iframe').contentWindow.document.body.innerHTML = `${htmlInput.value} <script>${javascript}</script>`;
 
     });
 
@@ -114,9 +116,10 @@
     socket.on('AllJs', (js) => {
         console.log(js);
         jsInput.value = js;
-
+        console.log(currentJavascript(js));
+        let script = currentJavascript(js);
         // try {
-            document.querySelector('iframe').contentWindow.document.querySelector("script").innerHTML = eval(jsInput.value);
+            document.querySelector('iframe').contentWindow.document.querySelector("script").innerHTML = `eval("${script}");`
         // } catch(err){console.log("you fucked up")} // Maikel was here...
     });
 
@@ -135,8 +138,16 @@
     jsInput.addEventListener('input', () => {
         const js = jsInput.value;
         socket.emit('ClJs', js);
+
         console.log('javascript sent!');
     });
+
+
+function currentJavascript(js) {
+    javascript = '';
+    javascript = js;
+    return javascript
+}
 
 
 })();

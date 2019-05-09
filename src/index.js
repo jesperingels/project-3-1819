@@ -75,17 +75,19 @@ io.on('connection', socket => {
 
     });
 
-    socket.on('ClHtml', (html) => {
+    socket.on('ClHtml', html => {
         console.log(html);
         io.emit('AllHtml', html);
     });
-    socket.on('ClCss', (css) => {
+
+    socket.on('ClCss', css => {
         console.log(css);
         io.emit('AllCss', css)
     });
-    socket.on('ClJs', (css) => {
-        console.log(css);
-        io.emit('AllJs', css)
+
+    socket.on('ClJs', js => {
+        console.log(js);
+        io.emit('AllJs', js)
     });
 });
 
