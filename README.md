@@ -2,7 +2,10 @@
 
 ## Concept
 Voor de site van [freshheroes](https://freshheroes.com/), heb ik een toepassing bedacht waarbij een bedrijf een real-time coding 
-challenge met de potentiele stagiair kan doen.
+challenge met de potentiele stagiair kan houden.
+
+In de huidige versie van de app wordt de javascript uitgevoerd op elke client die is verbonden met de app. Dit maakt het 
+erg onveilig. 
 
 ## Onderzoek
 ### GraphQL
